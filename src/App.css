@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    font-size: 1em;
+    font-size: 1.2em;
     box-sizing: border-box;
     scroll-behavior: smooth;
     --body: hsl(228, 71%, 99%);
@@ -81,6 +81,27 @@ header a:hover {
 
 header .project:hover  {
     background-color: var(--header-link-bg-hover);
+}
+
+ .header {
+        flex: 1;
+    }
+
+.profile {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.profile-img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    clip-path: circle(45.8% at 50% 48%);
+    background: linear-gradient(180deg,transparent 0%, #ffffff 46%, var(--header-link-bg) 100%);;
+    border: 0;
 }
 
 .intro {
@@ -214,10 +235,24 @@ svg {
 }
 
 @media (min-width: 768px) {
+    :root {
+        font-size: 1em;
+    }
+   
     .grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1.5em;
     }
     
+    header {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .profile {
+        margin-top: 0;
+        margin-left: 1em;
+    }
+   
 }

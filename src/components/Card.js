@@ -1,8 +1,17 @@
 import React, { useState } from 'react';
 import './css/Card.css';
+import library from '../images/library-app.jpg';
+import scroll from '../images/Scroll-reveal.jpg';
+import todo from '../images/Todo-App.jpg';
+import weather from '../images/Weather-app.jpg';
+
+
 
 const Card = ({ title, desc, link, tech, code, img }) => {
     const[isFlipped, setIsFlipped] = useState(false);
+
+    const images = [weather, todo, scroll, library];
+    const source = images.map((image) => image);
 
     const handleFlip = () => {
         isFlipped === false ? setIsFlipped(true) : setIsFlipped(false);
@@ -14,7 +23,7 @@ const Card = ({ title, desc, link, tech, code, img }) => {
      <div className="scene">
                     <div className={addClass} onClick={ handleFlip} isFlipped={isFlipped} >
                             <div className="front face" >
-                                <img className='img' src={ img } alt={title} />
+                                <img className='img' src= {source} alt={title} />
                                 <span className='msg'>Click for more</span>
                             </div>
                             <div className="back face">
