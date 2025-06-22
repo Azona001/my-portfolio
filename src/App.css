@@ -239,10 +239,14 @@ svg {
         font-size: 1em;
     }
    
+    .wrapper {
+        padding: 0;
+    }
+
     .grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 1.5em;
+        gap: 2em;
     }
     
     header {

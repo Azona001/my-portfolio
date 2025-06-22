@@ -2,7 +2,7 @@ import React from 'react';
 
 const Nav = () => {
   return (
-    <div>
+    <div className='navbar'>
         <ul className='nav'>
             <li className='nav-home'><a href='/'>Azona Isagba</a></li>
             <li className='navlink'><a href='#about'>About</a></li>

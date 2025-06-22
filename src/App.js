@@ -6,6 +6,10 @@ import About from "./components/About";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 import Nav from "./components/Nav";
+import library from './images/library-app.jpg';
+import scroll from './images/Scroll-reveal.jpg';
+import todo from './images/To-do App.png';
+import weather from './images/Weather-app.jpg';
 
 
 
@@ -20,7 +24,7 @@ const App = () => {
               link: "#",
               tech: ["HTML", "CSS", "JavaScript", "OpenWeather API"],
               code: "https://github.com/Azona001/Weather001",
-              img: "/my-portfolio/src/images/Weather-app.jpg",
+              img: weather,
             },
             {
               title: "Todo List App",
@@ -28,7 +32,7 @@ const App = () => {
               link: "#",
               tech: ["React", "CSS"],
               code: "https://github.com/Azona001/MyTodo",
-              img: "/my-portfolio/src/images/Todo-App.jpg",
+              img: todo,
             },
             {
               title: "Scroll Reveal Site",
@@ -36,7 +40,7 @@ const App = () => {
               link: "#",
               tech: ["HTML", "CSS", "JavaScript"],
               code: "https://github.com/Azona001/Scroll-reveal",
-              img: "/my-portfolio/src/images/Scroll-reveal.jpg",
+              img: scroll,
             },
              {
               title: "Library App",
@@ -44,7 +48,7 @@ const App = () => {
               link: "#",
               tech: ["HTML", "CSS", "JavaScript"],
               code: "https://github.com/Azona001/MyLibrary",
-              img: "/my-portfolio/src/images/library-app.jpg",
+              img: library,
             },
         ];
 
