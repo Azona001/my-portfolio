@@ -1,38 +1,223 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    font-size: 1em;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    --body: hsl(228, 71%, 99%);
+    --shadow: hsl(225, 13%, 87%);
+    --link-color: hsl(0, 0%, 0%);
+    --link-hover-color: hsla(224, 96%, 61%, 0.8);
+    --header-link-bg: hsl(206, 100%, 41%);
+    --header-link-color: hsl(0, 0%, 100%);
+    --header-link-bg-hover: hsl(208, 100%, 24%);
+    
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*, *::before, *::after {
+    box-sizing: inherit;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+    background: var(--body);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.wrapper {
+    margin: 0 auto;
+    max-width: 1068px;
+    padding: 0 0.75em;
 }
 
-.App-link {
-  color: #61dafb;
+.nav {
+    display: flex;
+    justify-content: end;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav .navlink + .navlink  {
+    margin-left: 1.5em;
+}
+
+.nav-home {
+    margin-right: auto;
+}
+
+header {
+    text-align: left;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.top {
+    color: var(--header-link-bg);
+    margin: 0;
+}
+
+.name-intro {
+    margin: 0.5em 0 0;
+}
+
+header .project {
+    border-radius: 0.8em;
+    border: 0;
+    background-color: var(--header-link-bg);
+    transition: background-color 0.2s linear;
+}
+
+header a {
+    display: block;
+    width: 100%;
+    padding: 0.7em 0.8em;
+    cursor: pointer;
+    color: var(--header-link-color);
+}
+
+header a:hover {
+    color: var(--header-link-color);
+}
+
+header .project:hover  {
+    background-color: var(--header-link-bg-hover);
+}
+
+.intro {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} 
+
+
+p {
+    font-weight: 200;
+}
+
+#project {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: var(--link-color);
+    cursor: pointer;
+    padding: 1em;
+    display: block;
+    font-weight: 500;
+    text-align: left;
+    transition: color 0.2s linear;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+}
+
+.tech {
+    list-style-type: circle;
+    padding: 0;
+    font-weight: 200;
+    font-size: 0.75rem;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+     padding: 0;
+}
+
+li {
+    list-style: none;
+    font-size: 0.75rem;
+   
+}
+
+li + li {
+    margin-left: 1.5em;
+}
+
+.contact {
+    max-width: 300px;
+    margin: 3em auto 1em ;
+    text-align: center;
+}
+
+#contact-form {
+    display: grid;
+    gap: 1.5em;
+}
+
+.contact-fields {
+    width: 100%;
+}
+
+input:not([type='checkbox']):not([type= 'radio']) {
+    display: block;
+    width: 100%;
+    padding: 0.5em;
+}
+
+textarea {
+     display: block;
+    width: 100%;
+    padding: 0.5em;
+}
+
+.button {
+    display: flex;
+    justify-content: end;
+}
+
+.submit {
+    border-radius: 0.8em;
+    padding: 0.7em 1.2em;
+    border: 0;
+    grid-column: 2 / -1;
+    color: var(--header-link-color);
+    background-color: var(--header-link-bg);
+    transition: background-color 0.2s linear;
+}
+
+.submit:hover {
+    color: var(--header-link-color);
+    background-color: var(--header-link-bg-hover);
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 5em;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0.5em;
+    margin: 0.5em 0;
+}
+
+.icons >li + li {
+    margin-left: 0;
+}
+
+.footer-note {
+    font-size: 0.5rem;
+}
+
+svg {
+    width: 2em;
+    height: 2em;
+    color: black;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5em;
+    }
+    
 }
