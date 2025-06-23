@@ -15,7 +15,7 @@ import weather from './images/Weather-app.jpg';
 
 const App = () => {
 
-    const [value, setValue] = useState('');
+    const [isClicked, setIsClicked] = useState(false);
 
  const cardData =    [
             {
@@ -52,25 +52,25 @@ const App = () => {
             },
         ];
 
-        const handleChange = (e) => {
-            setValue(e.target.value);
-        };
+        const handleClick = (isClicked) => {
+            !isClicked ? setIsClicked(true) : setIsClicked(false);
+    }
 
-        const handleSubmit = (e) => {
-            e.preventDefault();
-            setValue('');
-        };
+        const clicked = isClicked ? "nav hide" : "nav" ;
 
     return (
         <div className="wrapper">
-            <Nav />
+            <Nav isClicked={isClicked} onClick={ handleClick } clicked={ clicked }/>
            <Header />
             <main className="container">
              <About />
              <Project title={"Projects"} info={cardData}/>
-             <Contact value={value} handleSubmit={handleSubmit} handleChange={handleChange} />
+             <br />
+             <Contact />
+             <br />
+             <Footer />
             </main>
-           <Footer />
+           
         </div>
     );
 };

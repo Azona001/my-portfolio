@@ -4,13 +4,14 @@
     font-size: 1.2em;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    --body: hsl(228, 71%, 99%);
+    --body: hsla(45, 29%, 97%, 0.5);
     --shadow: hsl(225, 13%, 87%);
     --link-color: hsl(0, 0%, 0%);
     --link-hover-color: hsla(224, 96%, 61%, 0.8);
     --header-link-bg: hsl(206, 100%, 41%);
     --header-link-color: hsl(0, 0%, 100%);
-    --header-link-bg-hover: hsl(208, 100%, 24%);
+    --header-link-bg-hover: hsl(206, 100%, 36%);
+    --input-border: hsl(0, 0%, 82%);
     
 }
 
@@ -27,7 +28,7 @@ body {
 .wrapper {
     margin: 0 auto;
     max-width: 1068px;
-    padding: 0 0.75em;
+    padding: 0;
 }
 
 .nav {
@@ -49,6 +50,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+ 
 }
 
 .top {
@@ -96,8 +98,8 @@ header .project:hover  {
 }
 
 .profile-img {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     object-fit: contain;
     clip-path: circle(45.8% at 50% 48%);
     background: linear-gradient(180deg,transparent 0%, #ffffff 46%, var(--header-link-bg) 100%);;
@@ -109,8 +111,8 @@ header .project:hover  {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: var(--body);
 } 
-
 
 p {
     font-weight: 200;
@@ -159,7 +161,7 @@ li + li {
 }
 
 .contact {
-    max-width: 300px;
+    max-width: 450px;
     margin: 3em auto 1em ;
     text-align: center;
 }
@@ -167,22 +169,29 @@ li + li {
 #contact-form {
     display: grid;
     gap: 1.5em;
+    width: 100%;
 }
 
 .contact-fields {
     width: 100%;
 }
 
-input:not([type='checkbox']):not([type= 'radio']) {
+input:not([type='checkbox']):not([type= 'radio']), textarea {
     display: block;
     width: 100%;
-    padding: 0.5em;
+    padding: 0.4rem 1.6rem;
+    border-radius: 0.5em;
+    border: 1px solid var(--input-border);
+    
 }
 
-textarea {
-     display: block;
-    width: 100%;
-    padding: 0.5em;
+.input {
+  transition: border-color 0.3s ease;
+}
+
+.error-border {
+  border-color: red;
+  background-color: #ffe5e5;
 }
 
 .button {
@@ -205,11 +214,23 @@ textarea {
     background-color: var(--header-link-bg-hover);
 }
 
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+input:invalid,
+textarea:invalid {
+  border-color: red;
+}
+
 footer {
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin-bottom: 5em;
+    
 }
 
 .icons {
@@ -240,7 +261,11 @@ svg {
     }
    
     .wrapper {
-        padding: 0;
+        padding: 0 0.75rem;
+    }
+
+    .ham {
+        display: none;
     }
 
     .grid {
@@ -251,12 +276,100 @@ svg {
     
     header {
         flex-direction: row;
-        align-items: center;
+        align-items: center;  
+        position: sticky;
+        top: 0;
+        background-color: var(--body);
+        z-index: 1;
+
     }
 
     .profile {
         margin-top: 0;
         margin-left: 1em;
     }
+
+    .profile-img {
+        width: 400px;
+        height: 400px;
+    }
+
+    .container {
+        background-color: #FAF9F6;
+        position: sticky;
+        top: 0;
+        z-index: 2;
+    }
+
+    footer {
+        background-color: #FAF9F6;
+    }
    
+
+    .contact {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: hsla(45, 29%, 97%, 1);
+        box-shadow: 0.1em 0.1em 1em var(--shadow);
+    }
+
+    .ham {
+       
+        padding: 0.2rem 0.9rem;
+    }
+    
+    .nav {
+        display: block;
+        margin: 0;
+        width: 25%;
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.2s ease-in, visibility 0.2s ease-in 0.1s;
+        position: absolute;
+        top: 2.4rem;
+        z-index: 10;
+    }
+
+    .nav .navlink + .navlink {
+        margin-left: 0;
+    }
+
+    .nav > li + li {
+        margin-left: 0;
+    }
+
+    .nav-home {
+        margin-right: 0;
+    }
+
+    .nav a {
+        text-align: left;
+        background-color: hsla(45, 29%, 97%, 0.8);
+        border: 1px solid var(--input-border);
+    }
+
+    .hide {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .top {
+        margin-top: 1rem;
+    }
+
 }
