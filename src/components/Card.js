@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import './css/Card.css';
+import { useInViewAnimation } from '../hooks/useInViewAnimation';
 
 
 
 
 const Card = ({ title, desc, link, tech, code, img }) => {
+
+     const { ref, className } = useInViewAnimation("animate__fadeInUp");
+
     const[isFlipped, setIsFlipped] = useState(false);
 
     const handleFlip = () => {
@@ -14,7 +18,7 @@ const Card = ({ title, desc, link, tech, code, img }) => {
     const addClass = isFlipped ? "card is-flipped" : "card"
   
     return (
-     <div className="scene">
+     <div className={`scene ${className} animate__delay-1s`} ref={ref} >
                     <div className={addClass} onClick={ handleFlip} isFlipped={isFlipped} >
                             <div className="front face" >
                                 <img className='img' src= {img} alt={title} />

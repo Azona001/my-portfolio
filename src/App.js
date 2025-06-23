@@ -10,6 +10,7 @@ import library from './images/library-app.jpg';
 import scroll from './images/Scroll-reveal.jpg';
 import todo from './images/To-do App.png';
 import weather from './images/Weather-app.jpg';
+import 'animate.css';
 
 
 
@@ -56,7 +57,7 @@ const App = () => {
             !isClicked ? setIsClicked(true) : setIsClicked(false);
     }
 
-        const clicked = isClicked ? "nav hide" : "nav" ;
+        const clicked = isClicked ? "nav reveal" : "nav" ;
 
     return (
         <div className="wrapper">
