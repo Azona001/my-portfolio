@@ -7,7 +7,7 @@ A personal portfolio website built with **React** and **plain CSS**, showcasing 
 ## 🚀 Live Demo
 
 <!-- Replace with actual link when deployed -->
-**Coming Soon** – Not yet deployed.
+**Vercel** – (https://my-portfolio-azona001s-projects.vercel.app/).
 
 ---
 
