@@ -14,7 +14,7 @@ const Nav = ({isClicked, onClick= f => f, clicked }) => {
         <ul className={clicked} isClicked={isClicked}>
             <li className='nav-home'><a href='/'>Azona Isagba</a></li>
             <li className='navlink'><a href='#about'>About</a></li>
-            <li className='navlink'><a href='#project-contain'>Project</a></li>
+            <li className='navlink'><a href='#project-contain'>Projects</a></li>
             <li className='navlink'><a href='#contact'>Contact</a></li>
         </ul>
        
