@@ -206,7 +206,9 @@ li + li {
 input:not([type='checkbox']):not([type= 'radio']), .contact-fields > textarea {
     display: block;
     width: 100%;
-    padding: 0.4rem 1.6rem;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    font-size: 1rem;
     border-radius: 0.5em;
     border: 1px solid var(--input-border);
     
@@ -232,8 +234,9 @@ input:not([type='checkbox']):not([type= 'radio']), .contact-fields > textarea {
 
 .submit {
     border-radius: 0.8em;
-    padding: 0.7em 1.2em;
+    padding: 0.75rem 1.5rem;
     border: 0;
+    cursor: pointer;
     grid-column: 2 / -1;
     color: var(--header-link-color);
     background-color: var(--header-link-bg);
