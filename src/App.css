@@ -78,18 +78,21 @@ header {
 }
 
 header .project {
+    padding: 0;
     border-radius: 0.8em;
     border: 0;
     background-color: var(--header-link-bg);
     transition: background-color 0.2s linear;
+    cursor: pointer;
 }
 
-header a {
+header .project-link {
     display: block;
-    width: 100%;
-    padding: 0.7em 0.8em;
+    padding: 0.75rem 1.5rem;
+    width: 100%; 
     cursor: pointer;
     color: var(--header-link-color);
+     border-radius: 0.8em;
 }
 
 header a:hover {
