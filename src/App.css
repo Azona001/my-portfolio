@@ -260,6 +260,11 @@ input:not([type='checkbox']):not([type= 'radio']):invalid,
   border-color: red;
 }
 
+input:not([type='checkbox']):not([type= 'radio']):valid,
+#message:valid {
+    border-color: green;
+}
+
 footer {
     display: flex;
     flex-direction: column;
