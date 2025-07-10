@@ -31,8 +31,8 @@ const Card = ({ title, desc, link, tech, code, img }) => {
                                 <li >{tech.join(" • ")}</li>
                                 </ul>
                                 <ul>
-                                    <li><a href={code} >Code</a></li>
-                                    <li><a href={link}>Live</a></li>
+                                    <li><a href={code} target='_blank' rel='noopener noreferrer'>Code</a></li>
+                                    <li><a href={link} target='_blank' rel='noopener noreferrer'>Live</a></li>
                                 </ul>
                             </div>
                     </div>

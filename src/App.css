@@ -386,6 +386,15 @@ svg {
     }
 }
 
+@media(min-width: 1200px) {
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 4em 2em;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}
+
 @media (max-width: 768px) {
    body {
     overflow-x: hidden;
