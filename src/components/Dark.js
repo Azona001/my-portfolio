@@ -10,20 +10,38 @@ const handleChange = (e) => {
 }
 
 useEffect(() => {
-  (theme === 'dark') ? document.body.classList.add('dark') : document.body.classList.remove('dark');
-  if(theme === 'system') {
-    const preferDark = window.matchMedia("(prefers-color-theme: dark)");
-    (preferDark.matches) ? document.body.classList.add('dark') : document.body.classList.remove('dark');
+   if (theme === 'dark') {
+    document.body.classList.add('dark');
+  } else if (theme === 'light') {
+    document.body.classList.remove('dark');
+  } else if (theme === 'system') {
+    const preferDark = window.matchMedia("(prefers-color-scheme: dark)");
+    preferDark.matches
+      ? document.body.classList.add('dark')
+      : document.body.classList.remove('dark');
   }
 }, [theme])
 
 
+useEffect(() => {
+  localStorage.setItem("theme", theme);
+}, [theme]);
+
+useEffect(() => {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) setTheme(savedTheme);
+}, []);
+
+
   return (
-    <select name='theme' className='theme'value={theme} onChange={handleChange}>
-             <option value="light" >Light</option>
-             <option value="dark" >Dark</option>
+    <div className='theme'>
+    <label htmlFor="theme-select">Theme:</label>
+    <select name='theme' value={theme} className='options' onChange={handleChange}>
+             <option value="light" >Light ☀️</option>
+             <option value="dark" >Dark 🌙</option>
              <option value="system" >System</option>
     </select>
+    </div>
   )
 }
 
