@@ -10,11 +10,14 @@
     --shadow: hsl(225, 13%, 87%);
     --link-color: hsl(0, 0%, 0%);
     --link-hover-color: hsla(224, 96%, 61%, 0.8);
-    --header-link-bg: hsl(206, 100%, 41%);
+    --header-link-bg: #0076d1;
     --header-link-color: hsl(0, 0%, 100%);
     --header-link-bg-hover: hsl(206, 100%, 36%);
     --input-border: hsl(0, 0%, 82%);
     --animate-duration: 0.5s;
+    --dark-color: hsl(0, 0%, 80%);
+    --dark-bg-color: hsl(0, 0%, 7%);
+    --dark-bg-color-two: hsla(0, 0%, 100%, 0.08);
     
 }
 
@@ -26,6 +29,68 @@ body {
     font-family: var(--body-font), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 1rem;
     background: var(--body);
+}
+
+body.dark {
+    background: hsl(0, 0%, 7%);
+    color: hsl(0, 0%, 80%);
+}
+
+body.dark p {
+    color: hsl(0, 0%, 80%);
+}
+
+body.dark .scene {
+    background-color: hsl(0, 0%, 19%);
+    box-shadow: none;
+}
+
+body.dark .intro {
+    background-color:  hsl(0, 0%, 7%);
+}
+
+body.dark header {
+    background-color: hsl(0, 0%, 7%);
+}
+
+body.dark .navbar {
+    background-color:  hsl(0, 0%, 7%);
+}
+
+body.dark .nav {
+    background-color: var(--dark-bg-color-two);
+}
+
+body.dark .container {
+    background-color: hsl(0, 0%, 7%);
+}
+
+body.dark footer {
+    background-color: var(--dark-bg-color);
+}
+
+body.dark a {
+    color: var(--dark-color);
+}
+
+body.dark .project-link {
+    color: #ffffff;
+}
+
+body.dark svg {
+    color: var(--dark-color);
+}
+
+body.dark img {
+    filter: brightness(0.8) contrast(1.2);
+}
+
+body.dark .error-border {
+    border-color: hsl(349, 52%, 61%);
+}
+
+body.dark a:hover {
+    color: var(--header-link-color);
 }
 
 .wrapper {
@@ -71,6 +136,10 @@ header {
     margin: 0;
 }
 
+body.dark .top {
+    color: #1573bc;
+}
+
 .name-intro {
     margin: 0.3em 0 0;
     font-size: 3rem;
@@ -101,6 +170,10 @@ header a:hover {
 
 header .project:hover  {
     background-color: var(--header-link-bg-hover);
+}
+
+body.dark header .project:hover {
+    background-color: hsl(205, 100%, 41%);
 }
 
 .header {
@@ -251,6 +324,10 @@ input:not([type='checkbox']):not([type= 'radio']), .contact-fields > textarea {
     background-color: var(--header-link-bg-hover);
 }
 
+body.dark .submit:hover {
+    background-color: #007AD3;
+}
+
 .error {
   color: red;
   font-size: 0.9rem;
@@ -285,6 +362,11 @@ footer {
 
 .icons >li + li {
     margin-left: 0;
+}
+
+.icons .dark-theme {
+    /* margin-left: auto; */
+    padding-block: 1rem;
 }
 
 .footer-note {
@@ -412,6 +494,11 @@ svg {
         box-shadow: 0.1em 0.1em 1em var(--shadow);
     }
 
+    body.dark .navbar {
+        background-color: var(--dark-bg-color-two);
+        box-shadow: none;
+    }
+
     .ham {
        
         padding: 0.2rem 0.9rem;
@@ -445,6 +532,11 @@ svg {
         text-align: left;
         background-color: hsla(240, 100%, 100%, 0.8);
         border: 1px solid var(--input-border);
+    }
+
+    body.dark .nav a {
+        background-color: hsl(0, 0%, 15%);
+        color: var(--dark-color);
     }
 
     .nav.reveal {
