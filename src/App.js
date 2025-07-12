@@ -77,9 +77,10 @@ const App = () => {
              <Project title={"Projects"} info={cardData}/>
              <br />
              <Contact />
-             <br />
+             
              <Footer />
             </main>
+            
            
         </div>
     );

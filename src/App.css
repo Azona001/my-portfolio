@@ -4,7 +4,7 @@
     font-size: 1.2em;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    --body: hsl(240, 60%, 99%);
+    --body: hsl(20, 10%, 94%);
     --body-font: Nunito;
     --name-font: Comfortaa;
     --shadow: hsl(225, 13%, 87%);
@@ -66,7 +66,7 @@ body.dark .container {
 }
 
 body.dark footer {
-    background-color: var(--dark-bg-color);
+    background-color: var(--dark-bg-color-two);
 }
 
 body.dark a {
@@ -369,27 +369,63 @@ input:not([type='checkbox']):not([type= 'radio']):valid,
 }
 
 footer {
+    margin-top: 5rem;
     display: flex;
     flex-direction: column;
     text-align: center;
-    
+    background-color: #ffffff;
+    color: #707070;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-info > span {
+    padding-block: 0.5rem;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.675rem;
+    flex: 2;
+    padding: 0 1rem 2rem;
+    text-align: center;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 2rem 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.socials ul + span {
+    margin-top: 1rem;
 }
 
 .icons {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 0.5em;
-    margin: 0.5em 0;
+    margin: 0;
 }
 
 .icons >li + li {
     margin-left: 0;
 }
 
-.icons .dark-theme {
-     margin-left: auto; 
-    padding-block: 1rem;
+.icons a {
+    padding-top: 0;
 }
 
 .icons a:focus-visible {
@@ -399,6 +435,13 @@ footer {
 
 .footer-note {
     font-size: 0.5rem;
+    padding-block: 0.5rem;
+}
+
+.theme {
+    padding: 2rem 1rem;
+    font-size: 0.675rem;
+    text-align: center;
 }
 
 svg {
@@ -426,6 +469,7 @@ svg {
    
     .wrapper {
         padding: 0 0.75rem;
+        
     }
 
     .navbar {
@@ -495,9 +539,41 @@ svg {
     }
 
     footer {
-        background-color: var(--body);
+        margin-top: 5rem;
+        
+         
+    }
+
+    .footer-container {
+       
+        display: flex;
+        flex-direction: row;
+    }
+
+    .socials {
+        align-items: start;
     }
    
+    .footer-contact {
+        text-align: left;
+        display: flex;
+        flex-direction: row;
+        flex: 3;
+        padding: 2rem 1rem;
+        
+    }
+
+    .footer-info {
+        display: flex;
+        flex-direction: column;
+        flex: 3;
+        justify-content: center;
+    }
+
+    .theme {
+         text-align: right;
+         flex: 1;
+    }
 
     .contact {
         height: 100vh;
@@ -505,6 +581,10 @@ svg {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    svg {
+        color: black;
     }
 }
 
