@@ -69,7 +69,7 @@ const Contact = () => {
 
       <form id="contact-form" onSubmit={onFormSubmit} noValidate>
         <div className="contact-fields">
-          <label htmlFor="name"></label>
+          <label htmlFor="name">Name:</label>
           <input
             type="text"
             id="name"
@@ -78,13 +78,15 @@ const Contact = () => {
             value={formValues.name}
             onChange={onInputChange}
             required
+            aria-invalid={!!errors.name}
+            aria-describedby={errors.name ? 'name-error' : undefined}
             className={errors.name ? 'input error-border' : 'input'}
           />
-          {errors.name && <span className="error">{errors.name}</span>}
+          {errors.name && (<span id='name-error' className="error" role='alert'>{errors.name}</span>)}
         </div>
 
         <div className="contact-fields">
-          <label htmlFor="email"></label>
+          <label htmlFor="email">Email:</label>
           <input
             type="email"
             id="email"
@@ -93,13 +95,15 @@ const Contact = () => {
             value={formValues.email}
             onChange={onInputChange}
             required
+            aria-invalid={!!errors.email}
+            aria-describedby={errors.email ? 'email-error' : undefined}
             className={errors.email ? 'input error-border' : 'input'}
           />
-          {errors.email && <span className="error">{errors.email}</span>}
+          {errors.email && (<span id='email-error' className="error" role='alert'>{errors.email}</span>)}
         </div>
 
         <div className="contact-fields">
-          <label htmlFor="message"></label>
+          <label htmlFor="message">Message: </label>
           <textarea
             id="message"
             name="message"
@@ -109,9 +113,11 @@ const Contact = () => {
             value={formValues.message}
             onChange={onInputChange}
             required
+            aria-invalid={!!errors.message}
+            aria-describedby={errors.message ? 'message-error' : undefined}
             className={errors.message ? 'input error-border' : 'input'}
           />
-          {errors.message && <span className="error">{errors.message}</span>}
+          {errors.message && (<span id='message-error' className="error" role='alert'>{errors.message}</span>)}
         </div>
 
         <div className="button">

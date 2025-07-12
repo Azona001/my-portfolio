@@ -104,11 +104,11 @@ body.dark a:hover {
     justify-content: end;
 }
 
-.nav .navlink + .navlink  {
+.nav .nav-item + .nav-item  {
     margin-left: 1.5em;
 }
 
-.nav > .navlink {
+.nav > .nav-item {
     font-size: 1rem;
 }
 
@@ -147,8 +147,6 @@ body.dark .top {
 }
 
 header .project {
-    padding: 0;
-    border-radius: 0.8em;
     border: 0;
     background-color: var(--header-link-bg);
     transition: background-color 0.2s linear;
@@ -156,12 +154,18 @@ header .project {
 }
 
 header .project-link {
-    display: block;
+    display: inline-block;
     padding: 0.75rem 1.5rem;
     width: 100%; 
     cursor: pointer;
     color: var(--header-link-color);
      border-radius: 0.8em;
+}
+
+.project-link:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #60a5fa, 0 0 0 4px rgba(96, 165, 250, 0.3);
+    transition: box-shadow 0.2s ease-in-out;
 }
 
 header a:hover {
@@ -273,6 +277,7 @@ li + li {
     display: grid;
     gap: 1.5em;
     width: 100%;
+    text-align: left;
 }
 
 .contact-fields {
@@ -283,7 +288,7 @@ input:not([type='checkbox']):not([type= 'radio']), .contact-fields > textarea {
     display: block;
     width: 100%;
     padding: 0.75rem;
-    margin: 0.5rem 0;
+    margin: 0 0 0.5rem;
     font-size: 1rem;
     border-radius: 0.5em;
     border: 1px solid var(--input-border);
@@ -295,11 +300,11 @@ input:not([type='checkbox']):not([type= 'radio']), .contact-fields > textarea {
 }
 
 .input {
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.2s;
 }
 
 .error-border {
-  border-color: red;
+  border-color: #dc2626;
   background-color: #ffe5e5;
 }
 
@@ -324,15 +329,32 @@ input:not([type='checkbox']):not([type= 'radio']), .contact-fields > textarea {
     background-color: var(--header-link-bg-hover);
 }
 
+.submit:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #60a5fa, 0 0 0 4px rgba(96, 165, 250, 0.3);
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.submit:disabled {
+  background-color: #9ca3af; 
+  cursor: not-allowed;
+}
+
 body.dark .submit:hover {
     background-color: #007AD3;
 }
 
 .error {
-  color: red;
+  color: #dc2626;
   font-size: 0.9rem;
   margin-top: 0.25rem;
   display: block;
+}
+
+input:not([type='checkbox']):not([type= 'radio']):focus, .contact-fields > textarea:focus {
+    outline: none;
+    border-color: #2563eb; 
+    box-shadow: 0 0 0 2px #93c5fd;
 }
 
 input:not([type='checkbox']):not([type= 'radio']):invalid,
@@ -367,6 +389,11 @@ footer {
 .icons .dark-theme {
      margin-left: auto; 
     padding-block: 1rem;
+}
+
+.icons a:focus-visible {
+  outline: 2px solid #60a5fa; 
+  outline-offset: 4px;
 }
 
 .footer-note {
@@ -528,7 +555,7 @@ svg {
         z-index: 10;
     }
 
-    .nav .navlink + .navlink {
+    .nav .nav-item + .nav-item {
         margin-left: 0;
     }
 

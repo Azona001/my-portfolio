@@ -9,9 +9,9 @@ const Header = () => {
                 <h1 className='name-intro'>Hi, my name is Azona Isagba</h1>
                 <p>Crafting clean, responsive websites with HTML, CSS, and JavaScript</p>
                 <div className="buttons">
-                    <button type="button" className="project" >
-                        <a href="#project" className='project-link'>View Projects</a>
-                    </button>
+                    
+                        <a href="#project" className='project project-link'>View Projects</a>
+                   
                 </div>
             </div>
             <div className='profile'>
