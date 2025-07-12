@@ -36,7 +36,7 @@ useEffect(() => {
   return (
     <div className='theme'>
     <label htmlFor="theme-select">Theme:</label>
-    <select name='theme' value={theme} className='options' onChange={handleChange}>
+    <select id='theme-select' name='theme' value={theme} className='options' onChange={handleChange}>
              <option value="light" >Light ☀️</option>
              <option value="dark" >Dark 🌙</option>
              <option value="system" >System</option>

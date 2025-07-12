@@ -19,7 +19,8 @@ const Card = ({ title, desc, link, tech, code, img }) => {
   
     return (
      <div className={`scene ${className} animate__delay-1s`} ref={ref} >
-                    <div className={addClass} onClick={ handleFlip} isFlipped={isFlipped} >
+                    <div className={addClass} onClick={ handleFlip} isFlipped={isFlipped} 
+                    aria-label={`Flip card for more details about ${title}`}>
                             <div className="front face" >
                                 <img className='img' src= {img} alt={title} />
                                 <span className='msg'>Click for more</span>
@@ -31,8 +32,8 @@ const Card = ({ title, desc, link, tech, code, img }) => {
                                 <li >{tech.join(" • ")}</li>
                                 </ul>
                                 <ul>
-                                    <li><a href={code} target='_blank' rel='noopener noreferrer'>Code</a></li>
-                                    <li><a href={link} target='_blank' rel='noopener noreferrer'>Live</a></li>
+                                    <li><a href={code} target='_blank' rel='noopener noreferrer' aria-label={`View source code for ${title}`}>Code</a></li>
+                                    <li><a href={link} target='_blank' rel='noopener noreferrer' aria-label={`View live project for ${title}`}>Live</a></li>
                                 </ul>
                             </div>
                     </div>
