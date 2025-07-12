@@ -67,6 +67,7 @@ body.dark .container {
 
 body.dark footer {
     background-color: var(--dark-bg-color-two);
+    color: var(--dark-color);
 }
 
 body.dark a {
@@ -400,11 +401,25 @@ footer {
     text-align: center;
 }
 
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-nav a {
+    text-align: center;
+    color: #707070;
+}
+
+.footer-nav > li + li {
+    margin-left: 0;
+}
+
 .socials {
     display: flex;
     flex-direction: column;
     flex: 1;
-    padding: 2rem 1rem;
+    padding: 0 1rem;
     justify-content: center;
     align-items: center;
 }
@@ -422,10 +437,6 @@ footer {
 
 .icons >li + li {
     margin-left: 0;
-}
-
-.icons a {
-    padding-top: 0;
 }
 
 .icons a:focus-visible {
@@ -552,6 +563,8 @@ svg {
 
     .socials {
         align-items: start;
+        justify-content: start;
+        padding-block: 2rem;
     }
    
     .footer-contact {
@@ -563,16 +576,27 @@ svg {
         
     }
 
+    .footer-contact > nav {
+        flex: 1;
+    }
+
     .footer-info {
         display: flex;
         flex-direction: column;
-        flex: 3;
-        justify-content: center;
+        flex: 2;
+    }
+
+    .footer-nav {
+        margin: 0;
+    }
+
+    .footer-nav a {
+        text-align: left;
     }
 
     .theme {
          text-align: right;
-         flex: 1;
+         padding-top: 0.75rem;
     }
 
     .contact {
