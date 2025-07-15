@@ -23,7 +23,7 @@ const Footer = () => {
           <div className='footer-contact'>
             <nav aria-labelledby='footer-contact'>
                 <ul className='footer-nav'>
-                    <li><a href='#top'>Top</a></li>
+                    <li><a href='#top-header'>Top</a></li>
                     <li><a href='#about'>About</a></li>
                     <li><a href='#project-contain'>Project</a></li>
                     <li><a href='#contact'>Contact</a></li>
