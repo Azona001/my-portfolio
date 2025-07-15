@@ -6,7 +6,7 @@ import About from "./components/About";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 import Nav from "./components/Nav";
-import library from './images/library-app.jpg';
+// import library from './images/library-app.jpg';
 import scroll from './images/Scroll-reveal.jpg';
 import todo from './images/To-do App.png';
 import weather from './images/Weather-app.jpg';
@@ -52,14 +52,14 @@ const App = () => {
               code: "https://github.com/Azona001/Scroll-reveal",
               img: scroll,
             },
-             {
-              title: "Library App",
-              desc: "Track books with add/edit/delete features and localStorage.",
-              link: "#",
-              tech: ["HTML", "CSS", "JavaScript"],
-              code: "https://github.com/Azona001/MyLibrary",
-              img: library,
-            },
+            //  {
+            //   title: "Library App",
+            //   desc: "Track books with add/edit/delete features and localStorage.",
+            //   link: "#",
+            //   tech: ["HTML", "CSS", "JavaScript"],
+            //   code: "https://github.com/Azona001/MyLibrary",
+            //   img: library,
+            // },
         ];
 
         const handleClick = (isClicked) => {
