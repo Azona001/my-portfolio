@@ -1,122 +1,213 @@
-.scene {
-    width: 100%;
-    border-radius: 1em;
-    border: 0;
-    background-color: hsl(240, 100%, 100%);
-    box-shadow: 0.1em 0.1em 1em var(--shadow);
-}
-
-.scene a {
-    padding-left: 0;
-}
-
-.scene + .scene {
-    margin-top: 1.5em;
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-}
-
-.msg {
-    visibility: hidden;
-}
-
-.front {
-    flex: 2;
-    padding: 0.5em 0.5em 0;
-    display: flex;
-    align-items: center;
-}
-
-.img {
-    object-fit: contain;
-    width: 100%;
-    height: 100%;
-    display: block;
-    border-radius: 1rem 1rem 0 0;
-}
-
-.back {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-     padding: 1em;
-     overflow-y: auto;
+.card-scene {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: hsl(0, 0%, 100%);
+  box-shadow: 0 2px 16px hsla(220, 15%, 75%, 0.4);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
 }
 
 @media (min-width: 768px) {
-   .scene {
-    display: flex;
-    flex-direction: column;
-    height: 300px;
-    perspective: 500px;
-    transform: translateZ(0);
-    transition: transform 1s ease-in-out;
-    align-self: center;
-    position: relative;
-    
-   }
-
-   .scene + .scene {
-        margin-top: 0;
-   }
-
-   .card {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transition: transform 1s;
-    transform-style: preserve-3d;
-   }
-
-   .scene:hover {
-        box-shadow: 0.1em 0.4em 1.2em var(--shadow);
-        transform: translateZ(10px);
-   }
-
-   .face {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        backface-visibility: hidden;
-   }
-
-   .front {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: 1em 0;
-    width: 100%;
-   }
-
-   .msg {
-    visibility: visible;
-    display: block;
-    font-size: 0.75rem;
-    font-weight: 200;
-    padding: 0.5em;
-   }
-
-   .back {
-    transform: rotateY( 180deg );
-   }
-
-   .card.is-flipped {
-     transform: rotateY(180deg);
-    }
-
-    .img {
-        height: 85%;
-        object-fit: cover;
-        border-radius: 0;
-    }
+  .card-scene {
+    margin-bottom: 0;
+  }
 }
 
+.card-scene:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px hsla(220, 15%, 65%, 0.45);
+}
+
+.card-scene:active {
+  transform: translateY(-2px);
+}
+
+/* Image */
+.card-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.card-scene:hover .card-img {
+  transform: scale(1.04);
+}
+
+/* Title bar — always visible */
+.card-title-bar {
+  padding: 1.1rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+  color: hsl(220, 15%, 15%);
+  letter-spacing: -0.01em;
+}
+
+.card-tech-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-direction: row;
+}
+
+.card-tech-inline li {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: hsl(213, 70%, 40%);
+  background: hsl(213, 100%, 95%);
+  padding: 0.2rem 0.55rem;
+  border-radius: 2rem;
+  margin: 0;
+}
+
+/* Overlay */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: hsla(222, 40%, 12%, 0.93);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  backdrop-filter: blur(2px);
+  padding: 1.5rem;
+}
+
+.card-overlay--visible {
+  opacity: 1;
+}
+
+.card-overlay-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  width: 100%;
+}
+
+.card-overlay-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.card-overlay-desc {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: hsl(220, 15%, 80%);
+  margin: 0;
+  font-weight: 400;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-overlay-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-direction: row;
+}
+
+.card-overlay-tech li {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: hsl(213, 80%, 75%);
+  background: hsla(213, 80%, 50%, 0.15);
+  border: 1px solid hsla(213, 80%, 60%, 0.3);
+  padding: 0.2rem 0.5rem;
+  border-radius: 2rem;
+  margin: 0;
+}
+
+.card-overlay-links {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+  flex-direction: row;
+}
+
+.card-overlay-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+  text-align: center;
+}
+
+.card-overlay-links a:first-child {
+  background: hsla(255, 100%, 100%, 0.1);
+  color: #fff;
+  border: 1px solid hsla(255, 100%, 100%, 0.2);
+}
+
+.card-overlay-links a:first-child:hover {
+  background: hsla(255, 100%, 100%, 0.2);
+}
+
+.card-overlay-links a:last-child {
+  background: var(--header-link-bg);
+  color: #fff;
+  border: 1px solid var(--header-link-bg);
+}
+
+.card-overlay-links a:last-child:hover {
+  background: var(--header-link-bg-hover);
+}
+
+.card-overlay-links svg {
+  width: 0.9em;
+  height: 0.9em;
+  color: inherit;
+}
+
+/* Dark mode */
+body.dark .card-scene {
+  background: hsl(222, 14%, 15%);
+  box-shadow: none;
+  border: 1px solid hsl(222, 14%, 22%);
+}
+
+body.dark .card-title {
+  color: hsl(220, 15%, 85%);
+}
+
+body.dark .card-tech-inline li {
+  background: hsl(213, 30%, 18%);
+  color: hsl(213, 70%, 65%);
+}
+
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .scene > div {
+  .card-scene,
+  .card-img,
+  .card-overlay {
     transition: none !important;
   }
 }

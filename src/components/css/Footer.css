@@ -1,0 +1,203 @@
+.footer {
+  margin-top: 6rem;
+  background-color: hsl(220, 20%, 16%);
+  color: hsl(220, 15%, 75%);
+}
+
+.footer-inner {
+  max-width: 1068px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 2rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Brand */
+.footer-name {
+  display: block;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-style: italic;
+  color: #fff;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.6rem;
+}
+
+.footer-bio {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: hsl(220, 12%, 60%);
+  max-width: 260px;
+  margin: 0 0 1.25rem;
+  font-weight: 300;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: row;
+}
+
+.footer-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: hsl(220, 20%, 22%);
+  color: hsl(220, 15%, 70%);
+  transition: background 0.2s, color 0.2s;
+  padding: 0;
+}
+
+.footer-icon-link svg {
+  width: 1.1em;
+  height: 1.1em;
+  color: inherit;
+}
+
+.footer-icon-link:hover {
+  background: var(--header-link-bg);
+  color: #fff;
+}
+
+/* Columns */
+.footer-col-heading {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: hsl(220, 15%, 55%);
+  margin: 0 0 1rem;
+}
+
+/* Nav list */
+.footer-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.footer-nav-list li {
+  font-size: 0.9rem;
+}
+
+.footer-nav-list a {
+  display: inline;
+  padding: 0.25rem 0;
+  color: hsl(220, 12%, 65%);
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+.footer-nav-list a:hover {
+  color: #fff;
+}
+
+/* Contact list */
+.footer-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.footer-contact-list li {
+  font-size: 0.85rem;
+}
+
+.footer-contact-list a {
+  display: inline;
+  padding: 0.25rem 0;
+  color: hsl(220, 12%, 65%);
+  font-weight: 400;
+  transition: color 0.2s;
+  word-break: break-all;
+}
+
+.footer-contact-list a:hover {
+  color: #fff;
+}
+
+/* Theme selector overrides inside footer */
+.footer .theme {
+  padding: 0;
+  font-size: 0.8rem;
+  text-align: left;
+  color: hsl(220, 12%, 55%);
+}
+
+.footer .options {
+  background-color: hsl(220, 20%, 22%);
+  color: hsl(220, 15%, 75%);
+  border: 1px solid hsl(220, 15%, 28%);
+  margin-left: 0.4em;
+}
+
+.footer .options:focus {
+  outline-color: var(--header-link-bg);
+}
+
+/* Bottom bar */
+.footer-bottom {
+  border-top: 1px solid hsl(220, 20%, 22%);
+  text-align: center;
+  padding: 1rem 1.5rem;
+  font-size: 0.75rem;
+  color: hsl(220, 12%, 45%);
+}
+
+/* Dark mode — footer is already dark so minimal overrides needed */
+body.dark .footer {
+  background-color: hsl(222, 18%, 8%);
+  border-top: 1px solid hsl(222, 14%, 14%);
+}
+
+body.dark .footer-bottom {
+  border-top-color: hsl(222, 14%, 14%);
+}
+
+body.dark .footer-icon-link {
+  background: hsl(222, 16%, 16%);
+}
+
+body.dark .footer .options {
+  background-color: hsl(222, 16%, 16%);
+  border-color: hsl(222, 14%, 22%);
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2.5rem 1.25rem 1.5rem;
+  }
+
+  .footer-bio {
+    max-width: 100%;
+  }
+
+  .footer .theme {
+    text-align: left;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}

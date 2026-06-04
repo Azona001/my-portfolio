@@ -1,0 +1,46 @@
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 1.5rem;
+  z-index: 100;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background-color: var(--header-link-bg);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px hsla(213, 95%, 42%, 0.4);
+  opacity: 0;
+  transform: translateY(1rem);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s;
+}
+
+.back-to-top svg {
+  width: 1.2em;
+  height: 1.2em;
+  color: #fff;
+}
+
+.back-to-top--visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  background-color: var(--header-link-bg-hover);
+}
+
+.back-to-top:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px #60a5fa;
+}
+
+body.dark .back-to-top {
+  box-shadow: 0 4px 14px hsla(213, 80%, 40%, 0.3);
+}

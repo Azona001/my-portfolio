@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page not found | Azona Isagba</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: hsl(220, 20%, 97%);
+      color: hsl(220, 15%, 20%);
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .code {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(6rem, 20vw, 10rem);
+      font-weight: 700;
+      font-style: italic;
+      color: hsl(213, 95%, 42%);
+      line-height: 1;
+      opacity: 0.15;
+      user-select: none;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-top: -2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: hsl(220, 10%, 50%);
+      line-height: 1.7;
+      max-width: 400px;
+      margin-bottom: 2rem;
+    }
+
+    a {
+      display: inline-block;
+      padding: 0.75rem 1.75rem;
+      background: hsl(213, 95%, 42%);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 0.75rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: background 0.2s ease, transform 0.1s ease;
+      box-shadow: 0 4px 14px hsla(213, 95%, 42%, 0.35);
+    }
+
+    a:hover { background: hsl(213, 95%, 33%); transform: translateY(-2px); }
+    a:active { transform: translateY(0); }
+  </style>
+</head>
+<body>
+  <div class="code">404</div>
+  <h1>Page not found</h1>
+  <p>Looks like this page took a wrong turn. Head back to the portfolio.</p>
+  <a href="/">Back home</a>
+</body>
+</html>
