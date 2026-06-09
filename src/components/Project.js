@@ -7,7 +7,7 @@ const FILTERS = ['All', 'React', 'JavaScript', 'Full Stack'];
 
 const techMap = {
   'React': (tech) => tech.some(t => t.toLowerCase().includes('react')),
-  'JavaScript': (tech) => tech.some(t => ['javascript', 'html', 'css'].includes(t.toLowerCase())),
+  'JavaScript': (tech) => tech.some(t => ['javascript', 'typescript', 'html', 'css'].includes(t.toLowerCase())),
   'Full Stack': (tech) => tech.some(t => ['node.js', 'express', 'mysql', 'express.js'].includes(t.toLowerCase())),
 };
 

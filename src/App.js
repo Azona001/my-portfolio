@@ -10,7 +10,7 @@ import Nav from "./components/Nav";
 import BackToTop from "./components/BackToTop";
 import ScrollProgress from "./components/ScrollProgress";
 import CustomCursor from "./components/CustomCursor";
-// import library from './images/library-app.jpg';
+import library from './images/library-app.png';
 import taskmanager from './images/taskmanager-app.png';
 import todo from './images/To-do App.png';
 import weather from './images/Weather-app.jpg';
@@ -42,6 +42,14 @@ const App = () => {
               img: taskmanager,
            },
            {
+            title: "My Library",
+            desc: "A personal book tracking app with add, edit, delete, and live search. Fetches cover images from the Open Library API and persists your collection via localStorage. Includes read/unread toggling, dark/light mode, and empty-state messaging.",
+            link: "https://my-library-zeta-nine.vercel.app/",
+            tech: ["TypeScript", "HTML", "CSS", "Open Library API"],
+            code: "https://github.com/Azona001/MyLibrary",
+            img: library,
+           },
+           {
             title: "Movie App",
               desc: "A movie discovery app that lets users search films via The Movie Database API and stores user interaction data using Appwrite’s backend services",
               link: "https://movie-app-seven-kappa-73.vercel.app/",
@@ -65,14 +73,6 @@ const App = () => {
               code: "https://github.com/Azona001/Weather001",
               img: weather,
             },
-            //  {
-            //   title: "Library App",
-            //   desc: "Track books with add/edit/delete features and localStorage.",
-            //   link: "#",
-            //   tech: ["HTML", "CSS", "JavaScript"],
-            //   code: "https://github.com/Azona001/MyLibrary",
-            //   img: library,
-            // },
         ];
 
         const handleClick = (isClicked) => {
