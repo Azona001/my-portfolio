@@ -1,16 +1,29 @@
-import React from 'react';
-import { useInViewAnimation } from '../hooks/useInViewAnimation';
-import './css/Skills.css';
+import React from "react";
+import { useInViewAnimation } from "../hooks/useInViewAnimation";
+import "./css/Skills.css";
 
 const skills = [
-  { category: 'Languages', items: ['HTML', 'CSS', 'JavaScript'] },
-  { category: 'Frameworks & Libraries', items: ['React', 'Tailwind CSS', 'Animate.css'] },
-  { category: 'Tools & Platforms', items: ['Git', 'GitHub', 'Vercel', 'Appwrite', 'Formspree'] },
-  { category: 'APIs & Services', items: ['TMDB API', 'OpenWeather API'] },
+  { category: "Languages", items: ["HTML", "CSS", "JavaScript", "TypeScript"] },
+  {
+    category: "Frameworks & Libraries",
+    items: ["React", "Tailwind CSS", "Animate.css"],
+  },
+  {
+    category: "Backend & Databases",
+    items: ["Node.js", "Express", "MySQL", "Sequelize", "MongoDB"],
+  },
+  {
+    category: "Tools & Platforms",
+    items: ["Git", "GitHub", "Jest", "Vercel", "Appwrite", "Formspree"],
+  },
+  {
+    category: "APIs & Services",
+    items: ["Auth0", "Stripe", "Cloudinary", "TMDB API", "OpenWeather API"],
+  },
 ];
 
 const Skills = () => {
-  const { ref, className } = useInViewAnimation('animate__fadeInUp');
+  const { ref, className } = useInViewAnimation("animate__fadeInUp");
 
   return (
     <section className={`${className} skills-section`} id="skills" ref={ref}>
@@ -21,7 +34,9 @@ const Skills = () => {
             <h3 className="skill-category">{category}</h3>
             <ul className="skill-list">
               {items.map((skill) => (
-                <li key={skill} className="skill-badge">{skill}</li>
+                <li key={skill} className="skill-badge">
+                  {skill}
+                </li>
               ))}
             </ul>
           </div>

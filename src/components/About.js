@@ -1,30 +1,31 @@
-import React from 'react';
-import { useInViewAnimation } from '../hooks/useInViewAnimation';
-import './css/About.css';
+import React from "react";
+import { useInViewAnimation } from "../hooks/useInViewAnimation";
+import "./css/About.css";
 
 const highlights = [
-  { value: '5+', label: 'Projects built' },
-  { value: '🎨', label: 'Animation background' },
-  { value: 'Full-Stack', label: 'Simplilearn Bootcamp' },
-  { value: 'React', label: 'Primary focus' },
+  { value: "5+", label: "Projects built" },
+  { value: "🎨", label: "Animation background" },
+  { value: "Full-Stack", label: "Simplilearn Bootcamp" },
+  { value: "React", label: "Primary focus" },
 ];
 
 const About = () => {
-  const { ref, className } = useInViewAnimation('animate__fadeInUp');
+  const { ref, className } = useInViewAnimation("animate__fadeInUp");
 
   return (
     <section className={`about-section`} id="about" ref={ref}>
       <div className={`about-inner ${className}`}>
-
         {/* Text column */}
         <div className="about-text">
           <h2>About Me</h2>
           <p className="p-intro">
-            I'm a frontend developer with a background in animation and a recent
-            graduate of Simplilearn's Full-Stack Development Bootcamp. I enjoy
-            building responsive, accessible, and visually engaging websites. After
-            years of bringing stories to life through animation, I now bring that
-            creative energy into writing clean, user-friendly code.
+            Animation taught me that good design is felt before it's understood
+            — the right timing, the right weight, the right hierarchy. I brought
+            that sensibility into software development when I completed
+            Simplilearn's Full Stack Development Bootcamp in 2025. Today I build
+            full-stack web applications with React on the frontend and Node.js,
+            Express, and MySQL on the backend. The creative instincts stayed.
+            The tools just got more technical.
           </p>
           <p className="p-intro">
             Currently, I'm focused on improving my JavaScript skills, exploring
@@ -32,7 +33,7 @@ const About = () => {
           </p>
           <p className="currently-learning">
             <span className="learning-label">Currently learning</span>
-            TypeScript &amp; Next.js
+            Next.js
           </p>
         </div>
 
@@ -45,7 +46,6 @@ const About = () => {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
